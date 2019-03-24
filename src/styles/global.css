@@ -1,0 +1,31 @@
+html {
+    background-color: #e8f0ff;
+  }
+.MainLayout {
+    background-color: blue;
+}
+.Header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+}
+.HeaderButtons{
+    background-color: aqua;
+    padding: 1rem; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.HeaderButtons:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
