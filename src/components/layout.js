@@ -4,7 +4,9 @@ import "../styles/global.css"
 
 export default ({ children }) => (
   <div className="MainLayout">
-    <Header/>
-    {children}
+    <Header className="Header"/>
+    <div className="ChildOfChrist">
+      {children}
+    </div>
   </div>
 )
