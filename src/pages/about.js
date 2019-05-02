@@ -1,9 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
 
 export default () => (
     
     <Layout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Calvin Smith About</title>
+          <link rel="canonical" href="https://www.calvinsmith.xyz/about/" />
+        </Helmet>
         <h1>About Me</h1>
         <p> 
             My name is Calvin Smith and I am a second year Software Engineering student at the University of Ottawa.

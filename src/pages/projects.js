@@ -1,9 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
 
 export default () => (
     
     <Layout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Calvin Smith Projects</title>
+          <link rel="canonical" href="https://www.calvinsmith.xyz/projects/" />
+        </Helmet>
         <h1>My Projects</h1>
         <h3>Right now I have to projects on the go, bellow is a breif description of both</h3>
         <h4>Youddit</h4>
