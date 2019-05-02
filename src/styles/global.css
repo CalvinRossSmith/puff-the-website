@@ -1,8 +1,8 @@
 html {
-    background-color: #dddbff;
+    background-color: 	#04C4C7;
   }
 .MainLayout {
-    background-color: #dddbff;
+    background-color: 	#04C4C7;
 }
 .Header{
     display: flex;
@@ -17,7 +17,7 @@ html {
     height: 0;
 }
 .HeaderButtons{
-    background-color: #dbfdff;
+    background-color: #A531BB;
     display: inline-block;
     border-radius: 10px;
     margin: .1rem;
@@ -29,23 +29,27 @@ html {
     color: black;
     text-align: center;
     text-decoration: none;
-    box-shadow: 0 12px 16px 0 #dbfdff3b, 0 17px 50px 0 #dbfdff3b;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 }
 .HeaderButtons:hover {
-    background-color: #ffdddb;
+    background-color: 	#382F89;
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 #A531BB, 0 17px 50px 0 #A531BB;
 }
 .ChildOfChrist{
     margin: auto;
-    background-color: #dddbff;
+    background-color: #04C4C7;
     padding: 5%;
     padding-left: 10%;
     padding-right: 10%;
     text-align: center;
 }
 .resume{
+    width: 100%;
+    height: 100%;
+}
+.jazzCup{
     width: 100%;
     height: 100%;
 }

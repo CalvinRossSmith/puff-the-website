@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
+import jazzCup from "../../static/solocup jazz.png"
 
 export default () => (
     
@@ -15,6 +16,8 @@ export default () => (
 			Thanks for checking out my website, if you have any feedback that would be greatly appreciated
 		</p>
 		<a href="https://www.linkedin.com/in/calvinrosssmith/">To contact me click here</a>
+    <h4>My website is themed around the Solo Jazz Cups</h4>
+    <img src={jazzCup} alt="jazzCup" className="jazzCup"/>
     </Layout>
     
 )
