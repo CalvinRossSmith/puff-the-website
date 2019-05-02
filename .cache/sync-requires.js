@@ -5,6 +5,7 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
+  "component---cache-dev-404-page-js": hot(preferDefault(require("/home/calvinsmith/projects/puff-the-website/.cache/dev-404-page.js"))),
   "component---src-pages-404-js": hot(preferDefault(require("/home/calvinsmith/projects/puff-the-website/src/pages/404.js"))),
   "component---src-pages-about-js": hot(preferDefault(require("/home/calvinsmith/projects/puff-the-website/src/pages/about.js"))),
   "component---src-pages-home-js": hot(preferDefault(require("/home/calvinsmith/projects/puff-the-website/src/pages/home.js"))),

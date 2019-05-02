@@ -1,8 +1,8 @@
 html {
-    background-color: 	#04C4C7;
+    background-color: 	#30a1b1;
   }
 .MainLayout {
-    background-color: 	#04C4C7;
+    background-color: 	#30a1b1;
 }
 .Header{
     display: flex;
@@ -17,7 +17,7 @@ html {
     height: 0;
 }
 .HeaderButtons{
-    background-color: #A531BB;
+    background-color: #993d7e;
     display: inline-block;
     border-radius: 10px;
     margin: .1rem;
@@ -33,13 +33,13 @@ html {
 
 }
 .HeaderButtons:hover {
-    background-color: 	#382F89;
+    background-color: 	#2c2b6c;
     color: white;
-    box-shadow: 0 12px 16px 0 #382F89, 0 17px 50px 0 #382F89;
+    box-shadow: 0 12px 16px 0 #2c2b6c, 0 17px 50px 0 #2c2b6c;
 }
 .ChildOfChrist{
     margin: auto;
-    background-color: #04C4C7;
+    background-color: #30a1b1;
     padding: 5%;
     padding-left: 10%;
     padding-right: 10%;
