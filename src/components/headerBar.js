@@ -7,6 +7,5 @@ export default props => (
         <LinkingButtons toLocal="/about" text="About" styleName="HeaderButtons"/>
         <LinkingButtons toLocal="/resume" text="Resume" styleName="HeaderButtons"/>
         <LinkingButtons toLocal="/projects" text="Projects" styleName="HeaderButtons"/>
-        <LinkingButtons toLocal="/contact" text="Contact Me" styleName="HeaderButtons"/>
-    </div> 
+        </div> 
 )

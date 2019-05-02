@@ -8,7 +8,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _domready = _interopRequireDefault(require("domready"));
+var _domready = _interopRequireDefault(require("@mikaelkristiansson/domready"));
 
 var _socketIo = _interopRequireDefault(require("./socketIo"));
 
@@ -71,7 +71,7 @@ window.___emitter = _emitter.default;
 
   _loader.default.addDevRequires(_syncRequires.default);
 
-  _loader.default.getResourcesForPathname(window.location.pathname).then(() => {
+  Promise.all([_loader.default.getResourcesForPathname(`/dev-404-page/`), _loader.default.getResourcesForPathname(`/404.html`), _loader.default.getResourcesForPathname(window.location.pathname)]).then(() => {
     const preferDefault = m => m && m.default || m;
 
     let Root = preferDefault(require(`./root`));

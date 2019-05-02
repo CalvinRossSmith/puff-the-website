@@ -18,7 +18,7 @@ var _utils = require("@reach/router/lib/utils");
 
 var _gatsbyReactRouterScroll = require("gatsby-react-router-scroll");
 
-var _domready = _interopRequireDefault(require("domready"));
+var _domready = _interopRequireDefault(require("@mikaelkristiansson/domready"));
 
 var _navigation = require("./navigation");
 

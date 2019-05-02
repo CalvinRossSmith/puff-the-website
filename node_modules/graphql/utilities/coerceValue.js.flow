@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -201,8 +201,9 @@ export function coerceValue(
     return errors ? ofErrors(errors) : ofValue(coercedValue);
   }
 
+  // Not reachable. All possible input types have been considered.
   /* istanbul ignore next */
-  throw new Error(`Unexpected type: ${(type: empty)}.`);
+  throw new Error(`Unexpected input type: "${inspect((type: empty))}".`);
 }
 
 function ofValue(value) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -70,6 +70,43 @@ export function assertSchema(schema: mixed): GraphQLSchema {
  *     const MyAppSchema = new GraphQLSchema({
  *       query: MyAppQueryRootType,
  *       mutation: MyAppMutationRootType,
+ *     })
+ *
+ * Note: When the schema is constructed, by default only the types that are
+ * reachable by traversing the root types are included, other types must be
+ * explicitly referenced.
+ *
+ * Example:
+ *
+ *     const characterInterface = new GraphQLInterfaceType({
+ *       name: 'Character',
+ *       ...
+ *     });
+ *
+ *     const humanType = new GraphQLObjectType({
+ *       name: 'Human',
+ *       interfaces: [characterInterface],
+ *       ...
+ *     });
+ *
+ *     const droidType = new GraphQLObjectType({
+ *       name: 'Droid',
+ *       interfaces: [characterInterface],
+ *       ...
+ *     });
+ *
+ *     const schema = new GraphQLSchema({
+ *       query: new GraphQLObjectType({
+ *         name: 'Query',
+ *         fields: {
+ *           hero: { type: characterInterface, ... },
+ *         }
+ *       }),
+ *       ...
+ *       // Since this schema references only the `Character` interface it's
+ *       // necessary to explicitly list the types that implement it if
+ *       // you want them to be included in the final schema.
+ *       types: [humanType, droidType],
  *     })
  *
  * Note: If an array of `directives` are provided to GraphQLSchema, that will be
@@ -238,6 +275,27 @@ export class GraphQLSchema {
   getDirective(name: string): ?GraphQLDirective {
     return find(this.getDirectives(), directive => directive.name === name);
   }
+
+  toConfig(): {|
+    ...GraphQLSchemaConfig,
+    types: Array<GraphQLNamedType>,
+    directives: Array<GraphQLDirective>,
+    extensionASTNodes: $ReadOnlyArray<SchemaExtensionNode>,
+    assumeValid: boolean,
+    allowedLegacyNames: $ReadOnlyArray<string>,
+  |} {
+    return {
+      types: objectValues(this.getTypeMap()),
+      directives: this.getDirectives().slice(),
+      query: this.getQueryType(),
+      mutation: this.getMutationType(),
+      subscription: this.getSubscriptionType(),
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes || [],
+      assumeValid: this.__validationErrors !== undefined,
+      allowedLegacyNames: this.__allowedLegacyNames,
+    };
+  }
 }
 
 // Conditionally apply `[Symbol.toStringTag]` if `Symbol`s are supported
@@ -286,7 +344,7 @@ function typeMapReducer(map: TypeMap, type: ?GraphQLType): TypeMap {
   if (map[type.name]) {
     invariant(
       map[type.name] === type,
-      'Schema must contain unique named types but contains multiple ' +
+      'Schema must contain uniquely named types but contains multiple ' +
         `types named "${type.name}".`,
     );
     return map;

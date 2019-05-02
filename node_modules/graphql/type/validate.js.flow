@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -8,6 +8,7 @@
  */
 
 import find from '../polyfills/find';
+import flatMap from '../polyfills/flatMap';
 import objectValues from '../polyfills/objectValues';
 import objectEntries from '../polyfills/objectEntries';
 import {
@@ -100,7 +101,7 @@ class SchemaValidationContext {
     message: string,
     nodes?: $ReadOnlyArray<?ASTNode> | ?ASTNode,
   ): void {
-    const _nodes = (Array.isArray(nodes) ? nodes : [nodes]).filter(Boolean);
+    const _nodes = Array.isArray(nodes) ? nodes.filter(Boolean) : nodes;
     this.addError(new GraphQLError(message, _nodes));
   }
 
@@ -548,16 +549,7 @@ function getAllSubNodes<T: ASTNode, K: ASTNode, L: ASTNode>(
   object: SDLDefinedObject<T, K>,
   getter: (T | K) => ?(L | $ReadOnlyArray<L>),
 ): $ReadOnlyArray<L> {
-  let result = [];
-  for (const astNode of getAllNodes(object)) {
-    if (astNode) {
-      const subNodes = getter(astNode);
-      if (subNodes) {
-        result = result.concat(subNodes);
-      }
-    }
-  }
-  return result;
+  return flatMap(getAllNodes(object), item => getter(item) || []);
 }
 
 function getImplementsInterfaceNode(
