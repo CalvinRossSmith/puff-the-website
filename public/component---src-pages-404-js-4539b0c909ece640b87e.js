@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{142:function(e,t,n){"use strict";n.r(t);var a=n(0),l=n.n(a),c=n(151);t.default=function(){return l.a.createElement("div",null,l.a.createElement(c.Helmet,null,l.a.createElement("meta",{charSet:"utf-8"}),l.a.createElement("title",null,"Shit Fuck"),l.a.createElement("link",{rel:"canonical",href:"https://www.calvinsmith.xyz/404/"})),l.a.createElement("p",null,"Oh shit fuck fuck fuck, Press Back!!!"))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-4539b0c909ece640b87e.js.map
