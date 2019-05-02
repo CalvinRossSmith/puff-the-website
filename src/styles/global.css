@@ -35,7 +35,7 @@ html {
 .HeaderButtons:hover {
     background-color: 	#382F89;
     color: white;
-    box-shadow: 0 12px 16px 0 #A531BB, 0 17px 50px 0 #A531BB;
+    box-shadow: 0 12px 16px 0 #382F89, 0 17px 50px 0 #382F89;
 }
 .ChildOfChrist{
     margin: auto;
