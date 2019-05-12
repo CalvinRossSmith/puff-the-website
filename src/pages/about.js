@@ -18,8 +18,9 @@ export default () => (
             I have had experience with a few amazing companies, like Espial Group and Ribbon Communications as well as a variety of self-taught experiences. 
         </p>
         <p>    
-            If you would like to discuss the possibility of hiring me as a co-op/intern or part time software engineer
+            If you would like to discuss the possibility of hiring me as a co-op/intern or part time software engineer feel free to message me
         </p>
+		<a href="https://www.linkedin.com/in/calvinrosssmith/">To contact me click here</a>
     </Layout>
     
 )
