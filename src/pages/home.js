@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
-import jazzCup from "../../static/solocup jazz.png"
+import jazzCup from "../../static/soloCupJazz.png"
 
 export default () => (
     

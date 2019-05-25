@@ -1,6 +1,9 @@
-# puff-the-website
+# Puff-the-website
 This is my website, hope you enjoy
 www.calvinsmith.xyz
+
+## How it is made
+This website is made using GatsbyJS, it is a great tool to make simple static webpages in react
 
 ## The Theme
 Right now my website right now is a jazz solo cup
